@@ -20,7 +20,13 @@
                             <a class="nav-link" href="about.html">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">About</a>
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registrasi">Registrasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
                         </li>
                     </ul>
                 </div>

@@ -7,3 +7,13 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+.container1 {
+    background-position: center; /* Posisi gambar di tengah */
+    color: white; /* Opsional: untuk memastikan teks terlihat jelas */
+}
+
+.teks1 {
+    text-align: center;
+    color: black;
+}
