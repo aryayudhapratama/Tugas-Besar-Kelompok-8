@@ -33,7 +33,7 @@
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>Arya Yudha | ...</li>
                         <li>Sandi Adimas | ...</li>
-                        <li>Ferdian Bimo | ...</li>
+                        <li>Ferdian Bimo | 1204220038</li>
                         <li>Rafi Syeghani | 1204220047</li>
                     </ul>
                 </div>
