@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrasiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
-
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -22,16 +22,17 @@ Route::get('admin', function () {
 
 Route::get('/product', [ProductController::class, 'index']);
 
+Route::get('/user', [UserController::class, 'index']);
+
 Route::get('transaction', function () {
     return view('admin.transaction');
 });
 
-Route::get('user', function () {
-    return view('admin.user');
-});
-
 // Rute resource untuk produk
 Route::resource('products', ProductController::class);
+
+// Rute resource untuk produk
+Route::resource('users', UserController::class);
 
 // Rute resource untuk transaksi
 Route::resource('transactions', TransactionController::class);

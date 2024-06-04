@@ -44,7 +44,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="active">
                         <a href="{{ url('product') }}"> <i class="menu-icon fa fa-dashboard"></i>Product </a>
@@ -53,7 +53,7 @@
                         <a href="transaction"> <i class="menu-icon fa fa-dashboard"></i>Transaction </a>
                     </li>
                     <li class="active">
-                        <a href="user"> <i class="menu-icon fa fa-dashboard"></i>User </a>
+                        <a href="{{ url('user') }}"> <i class="menu-icon fa fa-dashboard"></i>User </a>
                     </li>
                     {{-- <h3 class="menu-title">UI elements</h3><!-- /.menu-title --> --}}
 

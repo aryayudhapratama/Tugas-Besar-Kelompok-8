@@ -11,7 +11,7 @@
                 </div>
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Product</h1>
+                        <h1>User</h1>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Table</strong>
-                                <a href="{{ route('products.create') }}" class="btn text-white"
+                                <a href="{{ route('users.create') }}" class="btn text-white"
                                     style="background-color:#f4623a">Create New Data</a>
                             </div>
                             <div class="card-body">
@@ -33,23 +33,20 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Product Name</th>
-                                            <th>Price</th>
-                                            <th>Stock</th>
-                                            <th>Picture</th>
+                                            <th>User Name</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($products as $product)
+                                        @foreach ($users as $user)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $product->name }}</td>
-                                                <td>{{ $product->price }}</td>
-                                                <td>{{ $product->stock }}</td>
-                                                <td><img src="{{ asset('storage/product-picture/' . $product->picture) }}"
-                                                        alt="" width="100"></td>
-                                                <td>@include('admin.action')</td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->password }}</td>
+                                                <td>@include('admin.actionUser')</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
