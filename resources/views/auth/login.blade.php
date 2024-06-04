@@ -48,7 +48,7 @@
                         </button>
 
                         <div class="text-center">
-                            <span class="d-inline">Dont have an account? <a href="{{ route('register') }}" class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
+                            <span class="d-inline">Dont have an account? <a href="{{ url('registrasi') }}" class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
                             </span>
                         </div>
                     </div>
