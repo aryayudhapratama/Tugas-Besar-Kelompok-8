@@ -11,9 +11,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
 // Route Admin
 Route::get('admin', function () {
@@ -39,11 +36,20 @@ Route::resource('transactions', TransactionController::class);
 
 // end admin
 
+//Login Regis
 Auth::routes();
+Route::get('/login', function () {
+    return view('auth.login');
+});
 
+Route::get('/registrasi', function () {
+    return view('auth.registrasi');
+});
+
+
+//tampilan fitur
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
-
 Route::get('/about', [AboutController::class, 'index']);
-Route::get('/registrasi', [RegistrasiController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
+
+
