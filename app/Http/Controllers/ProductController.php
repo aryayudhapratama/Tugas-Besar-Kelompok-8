@@ -17,9 +17,8 @@ class ProductController extends Controller
     // Menampilkan semua produk
     public function index()
     {
-        // $products = Product::all();
-        // return response()->json($products);
         $products = Product::all();
+
         return view('admin.product', compact('products'));
     }
 
@@ -87,21 +86,59 @@ class ProductController extends Controller
         return view('admin.show', compact('pageTitle', 'product'));
     }
 
+    public function edit(string $id)
+    {
+        $pageTitle = 'Edit';
+
+        // ELOQUENT
+        $product = Product::find($id);
+
+        return view('admin.edit', compact('pageTitle', 'product'));
+    }
+
     // Memperbarui produk berdasarkan ID
     public function update(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'numeric' => 'Isi :attribute dengan angka',
+            'unique' => ':attribute harus unik'
+        ];
 
-        $request->validate([
-            'name' => 'string|max:255',
-            'description' => 'string',
-            'price' => 'numeric',
-            'stock' => 'integer',
-        ]);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'picture' => 'nullable|mimes:png,jpg,jpeg|max:2048', // ubah validasi gambar
+        ], $messages);
 
-        $product->update($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        return response()->json(['message' => 'Product updated successfully', 'product' => $product]);
+        $product = Product::find($id);
+
+        // Periksa apakah file gambar diunggah
+        if ($request->hasFile('picture')) {
+            $picture = $request->file('picture');
+            $filename = date('Y-m-d').$picture->getClientOriginalName();
+            $path = 'product-picture/'.$filename;
+
+            Storage::disk('public')->put($path, file_get_contents($picture));
+
+            // Jika gambar berhasil diunggah, perbarui field gambar di database
+            $product->picture = $filename;
+        }
+
+        // Perbarui field lainnya
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->save();
+
+        return redirect()->route('products.index');
     }
 
     // Menghapus produk berdasarkan ID

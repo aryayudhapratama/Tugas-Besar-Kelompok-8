@@ -14,19 +14,19 @@
                 <div class="navbar-nav ms-auto d-flex justify-content-end">
                     <ul class="nav navbar-nav d-flex align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="home">Home</a>
+                            <a class="nav-link" href="{{ url('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop">Shop</a>
+                            <a class="nav-link" href="{{ url('shop') }}">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about">About</a>
+                            <a class="nav-link" href={{ url('about') }}>About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registrasi">Registrasi</a>
+                            <a class="nav-link" href={{ url('registrasi') }}>Registrasi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login">Login</a>
+                            <a class="nav-link" href="{{ url('login') }}">Login</a>
                         </li>
                     </ul>
                 </div>
