@@ -31,8 +31,8 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Anggota Kelompok</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li>Arya Yudha | ...</li>
-                        <li>Sandi Adimas | ...</li>
+                        <li>Arya Yudha Pratama| 1204220083</li>
+                        <li>Sandi Adimas | 1204222135</li>
                         <li>Ferdian Bimo | 1204220038</li>
                         <li>Rafi Syeghani | 1204220047</li>
                     </ul>
@@ -47,10 +47,10 @@
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/sunshineshoescare?igsh=OG1sOWRwODdjNm1w"><i class="bi bi-instagram"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="bi bi-tiktok"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.tiktok.com/@sunshineshoescare?_t=8mtQ7L3QfOJ&_r=1"><i class="bi bi-tiktok"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
                             <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="bi bi-whatsapp"></i></a>
