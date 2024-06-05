@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
-                            <img src="{{ Vite::asset($product->picture) }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('storage/product-picture/'.$product->picture) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">{{ $product->description }}</p>

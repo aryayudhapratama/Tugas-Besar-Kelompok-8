@@ -55,13 +55,11 @@
 
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
 
-                        <button type="submit" class="signin mt-4">
-                            {{ __('Register') }}
+                        <button type="submit"  class="signin mt-4"> {{ __('Register') }}
                         </button>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="login-right w-50 h-100">
