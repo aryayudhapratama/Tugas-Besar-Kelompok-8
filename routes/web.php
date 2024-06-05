@@ -48,7 +48,7 @@ Route::get('/registrasi', function () {
 
 
 //tampilan fitur
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
