@@ -2,58 +2,189 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Transaction;
+use App\Models\User; // Pastikan untuk mengimpor model User
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class TransactionController extends Controller
 {
-    // Menampilkan semua transaksi
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $transactions = Transaction::with('product')->get();
-        return response()->json($transactions);
+        $transactions = Transaction::all();
+
+        return view('admin.transaction', compact('transactions'));
     }
 
-    // Menyimpan transaksi baru
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $pageTitle = 'Create Transaction';
+        $products = Product::all(); // Get all products for dropdown
+        $users = User::all(); // Get all users for dropdown
+
+        return view('admin.createTransaction', compact('pageTitle', 'products', 'users'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $request->validate([
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'numeric' => 'Isi :attribute dengan angka',
+            'unique' => ':attribute harus unik',
+            'mimes' => ':attribute harus berupa file dengan format png, jpg, jpeg',
+            'max' => ':attribute tidak boleh lebih dari :max kilobyte'
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
             'transaction_date' => 'required|date',
-            'product_id' => 'required|exists:products,id',
-            'quantity' => 'required|integer|min=1',
-        ]);
+            'quantity' => 'required|numeric',
+            'address' => 'required|string|max:255',
+            'picture' => 'required|mimes:png,jpg,jpeg|max:2048',
+        ], $messages);
 
-        // Ambil produk berdasarkan id
-        $product = Product::find($request->product_id);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        // Kurangi stok produk
-        $product->reduceStock($request->quantity);
+        $picture = $request->file('picture');
+        $filename = date('Y-m-d').$picture->getClientOriginalName();
+        $path = 'transaction-picture/'.$filename;
 
-        // Buat transaksi baru
-        $transaction = Transaction::create([
-            'transaction_date' => $request->transaction_date,
-            'product_id' => $request->product_id,
-            'quantity' => $request->quantity,
-        ]);
+        Storage::disk('public')->put($path,file_get_contents($picture));
 
-        return response()->json(['message' => 'Transaction created successfully', 'transaction' => $transaction], 201);
+        // ELOQUENT
+        $transaction = new Transaction();
+        $transaction->product_id = $request->product_id;
+        $transaction->user_id = $request->user_id;
+        $transaction->transaction_date = $request->transaction_date;
+        $transaction->quantity = $request->quantity;
+        $transaction->address = $request->address;
+        $transaction->picture = $filename;
+        $transaction->status = 'Process';
+        $transaction->save();
+
+        return redirect()->route('transactions.index');
     }
 
-    // Menampilkan transaksi berdasarkan ID
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        $transaction = Transaction::with('product')->findOrFail($id);
-        return response()->json($transaction);
+        $pageTitle = 'Transaction Detail';
+
+        // ELOQUENT
+        $transaction = Transaction::find($id);
+
+        return view('admin.showTransaction', compact('pageTitle', 'transaction'));
     }
 
-    // Menghapus transaksi berdasarkan ID
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $pageTitle = 'Edit Transaction';
+        $transaction = Transaction::find($id);
+        $products = Product::all(); // Get all products for dropdown
+        $users = User::all(); // Get all users for dropdown
+
+        return view('admin.editTransaction', compact('pageTitle', 'transaction', 'products', 'users'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'numeric' => 'Isi :attribute dengan angka',
+            'unique' => ':attribute harus unik',
+            'mimes' => ':attribute harus berupa file dengan format png, jpg, jpeg',
+            'max' => ':attribute tidak boleh lebih dari :max kilobyte'
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
+            'transaction_date' => 'required|date',
+            'quantity' => 'required|numeric',
+            'address' => 'required|string|max:255',
+            // 'picture' => 'nullable|mimes:png,jpg,jpeg|max:2048',
+            'status' => 'required',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $transaction = Transaction::find($id);
+
+        // Periksa apakah file gambar diunggah
+        // if ($request->hasFile('picture')) {
+        //     $picture = $request->file('picture');
+        //     $filename = date('Y-m-d') . '-' . $picture->getClientOriginalName();
+        //     $path = 'transaction-picture/' . $filename;
+
+        //     Storage::disk('public')->put($path, file_get_contents($picture));
+
+        //     // Jika gambar berhasil diunggah, perbarui field gambar di database
+        //     $transaction->picture = $path;
+        // }
+
+        // Perbarui field lainnya
+        $transaction->product_id = $request->product_id;
+        $transaction->user_id = $request->user_id;
+        $transaction->transaction_date = $request->transaction_date;
+        $transaction->quantity = $request->quantity;
+        $transaction->address = $request->address;
+        $transaction->status = $request->status;
+        $transaction->save();
+
+        return redirect()->route('transactions.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        $transaction = Transaction::findOrFail($id);
-        $transaction->delete();
+        Transaction::find($id)->delete();
 
-        return response()->json(['message' => 'Transaction deleted successfully']);
+        return redirect()->route('transactions.index');
     }
 }
-

@@ -6,8 +6,25 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('home');
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $pageTitle = 'Home Page';
+
+        return view('home',  compact('pageTitle'));
     }
 }

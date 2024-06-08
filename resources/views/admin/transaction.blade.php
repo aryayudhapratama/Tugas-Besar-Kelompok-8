@@ -1,9 +1,7 @@
 @extends('admin.app')
 
 @section('content')
-    <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-        <!-- Header-->
         <header id="header" class="header">
             <div class="col-sm-4">
                 <div class="col-sm-1" style="position: relative; left: -15px;">
@@ -11,13 +9,12 @@
                 </div>
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Product</h1>
+                        <h1>Transaction</h1>
                     </div>
                 </div>
             </div>
-        </header><!-- /header -->
+        </header>
 
-        <!-- Header-->
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -25,7 +22,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Table</strong>
-                                <a href="{{ route('products.create') }}" class="btn text-white"
+                                <a href="{{ route('transactions.create') }}" class="btn text-white"
                                     style="background-color:#f4623a">Create New Data</a>
                             </div>
                             <div class="card-body">
@@ -34,23 +31,29 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Product Name</th>
-                                            <th>Price</th>
-                                            <th>Stock</th>
+                                            <th>User Name</th>
+                                            <th>Transaction Date</th>
+                                            <th>Quantity</th>
+                                            <th>Address</th>
                                             <th>Picture</th>
-                                            <th>Action</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($products as $product)
+                                        @foreach ($transactions as $transaction)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $product->name }}</td>
-                                                <td>{{ $product->price }}</td>
-                                                <td>{{ $product->stock }}</td>
+                                                <td>{{ optional($transaction->product)->name }}</td>
+                                                <td>{{ optional($transaction->user)->name }}</td>
+                                                <td>{{ $transaction->transaction_date }}</td>
+                                                <td>{{ $transaction->quantity }}</td>
+                                                <td>{{ $transaction->address }}</td>
                                                 <td>
-                                                    <img src="{{ asset('storage/product-picture/' . $product->picture) }}"alt="" width="100">
+                                                    <img src="{{ asset('storage/transaction-picture/' . $transaction->picture) }}"alt="" width="100">
                                                 </td>
-                                                <td>@include('admin.action')</td>
+                                                <td>{{ $transaction->status }}</td>
+                                                <td>@include('admin.actionTransaction')</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -59,10 +62,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
+            </div>
+        </div>
+    </div>
 @endsection
