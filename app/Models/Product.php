@@ -8,6 +8,7 @@ class Product extends Model
 {
     protected $fillable = ['name', 'description', 'price', 'stock', 'picture'];
 
+    // Menghubungkan dengan model Transaction
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
@@ -16,8 +17,13 @@ class Product extends Model
     // Metode untuk mengurangi stok
     public function reduceStock($quantity)
     {
-        $this->stock -= $quantity;
-        $this->save();
+        // Pastikan stok tidak negatif
+        if ($this->stock >= $quantity) {
+            $this->stock -= $quantity;
+            $this->save();
+        } else {
+            // Tangani kasus di mana stok tidak mencukupi
+            throw new \Exception('Stok tidak mencukupi');
+        }
     }
 }
-
