@@ -11,6 +11,7 @@ class TransactionController extends Controller
     // Menampilkan semua transaksi
     public function index()
     {
+
         $transactions = Transaction::with('product')->get();
         return response()->json($transactions);
     }

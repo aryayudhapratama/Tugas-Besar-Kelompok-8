@@ -90,6 +90,7 @@ body, ul, li, p, a, label, input, div {
     transition: .5s;
   }
   #tempaltemo_footer .border-light { border-color: #2d343f !important;}
+  
   /*
   // Extra small devices (portrait phones, less than 576px)
   // No media query since this is the default in Bootstrap
@@ -262,7 +263,7 @@ body, ul, li, p, a, label, input, div {
   background-color: #ff6600;
   padding: 20px;
   color: white;
-  height: 450px; 
+  height: 450px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .banner img {
@@ -279,7 +280,7 @@ body, ul, li, p, a, label, input, div {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 .banner h1 {
   font-size: 24px;
