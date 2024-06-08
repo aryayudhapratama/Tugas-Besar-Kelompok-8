@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegistrasiController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Models\Transaction;
 
 // Route Admin
 Route::get('admin', function () {
@@ -21,9 +21,7 @@ Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/user', [UserController::class, 'index']);
 
-Route::get('transaction', function () {
-    return view('admin.transaction');
-});
+Route::get('/transaction', [TransactionController::class, 'index']);
 
 // Rute resource untuk produk
 Route::resource('products', ProductController::class);
@@ -35,21 +33,25 @@ Route::resource('users', UserController::class);
 Route::resource('transactions', TransactionController::class);
 
 // end admin
-
-//Login Regis
-Auth::routes();
-Route::get('/login', function () {
-    return view('auth.login');
-});
-
-Route::get('/registrasi', function () {
-    return view('auth.registrasi');
-});
-
+Route::get('/product', [ProductController::class, 'index']);
 
 //tampilan fitur
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Rute untuk halaman login
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+// Rute untuk mengirimkan data login
+Route::post('login', [LoginController::class, 'login']);
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
