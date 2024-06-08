@@ -40,6 +40,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
+// details produk
+Route::get('/detail/{id}', [ShopController::class, 'show'])->name('details');
+
 
 Auth::routes();
 

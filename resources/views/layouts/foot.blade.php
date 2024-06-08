@@ -1,6 +1,6 @@
     <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
+    <footer class="bg-dark mb-0" id="tempaltemo_footer">
+        <div class="container mb-0">
             <div class="row">
 
                 <div class="col-md-4 pt-5">

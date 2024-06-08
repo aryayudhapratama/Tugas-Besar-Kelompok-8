@@ -8,6 +8,8 @@ class AboutController extends Controller
 {
     function index()
     {
-        return view('about');
+        $pageTitle = 'About Page';
+
+        return view('about', compact('pageTitle'));
     }
 }
