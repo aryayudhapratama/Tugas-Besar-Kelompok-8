@@ -17,9 +17,11 @@ class ProductController extends Controller
     // Menampilkan semua produk
     public function index()
     {
+        $pageTitle = 'Product List';
+
         $products = Product::all();
 
-        return view('admin.product', compact('products'));
+        return view('admin.product', compact('products', 'pageTitle'));
     }
 
     /**

@@ -1,16 +1,20 @@
 @extends('layouts.app')
 @section('content')
 <div class="banner">
-    <img src="{{ Vite::asset('/resources/images/banner.png') }}" alt="banner">
+    <img src="{{ Vite::asset('/resources/images/image-14.png') }}" alt="banner">
     <div class="banner-content">
-        <h1>Selamat datang di Katalog Produk Kami!</h1>
-        <p>Temukan berbagai produk berkualitas tinggi untuk perawatan sepatu kesayangan Anda.</p>
+        <h2 class="fs-2 fw-bold">Selamat datang di Katalog Produk Kami!</h1>
+        <h4 class="fs-4">Temukan berbagai produk berkualitas tinggi untuk perawatan sepatu kesayangan Anda.</h4>
         <p>Kami menawarkan produk dari merek Shunsine Shoes Care terpercaya dengan harga terjangkau dan kemudahan berbelanja. Dapatkan produk Anda dengan cepat dan aman ke seluruh Indonesia.</p>
+        <div class="button-container mt-0 ">
+            <!-- Tombol "Shop NOW" -->
+            <a href="{{ url('shop') }}" class="btn btn-outline-light">Shop Now <i class="bi bi-arrow-right"></i></a>
+        </div>
     </div>
 </div>
 
 <div class="offers">
-    <h2>BEST OFFER !!!</h2>
+    <h2 class="fs-2 fw-bold">BEST OFFER !!!</h2>
     <div class="card1">
         <img src="{{ Vite::asset('/resources/images/sabun.png') }}" alt="Offer 1">
     </div>
@@ -23,7 +27,7 @@
 </div>
 
 <div class="customers">
-    <h2>OUR CUSTOMERS !!!</h2>
+    <h2 class="fs-2 fw-bold">OUR CUSTOMERS !!!</h2>
     <div>
         <img src="{{ Vite::asset('/resources/images/customer1.png') }}" alt="Customer 1">
     </div>
