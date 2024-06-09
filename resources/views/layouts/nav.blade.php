@@ -9,29 +9,6 @@
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="templatemo_main_nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-<<<<<<< HEAD
-            <div class="collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="navbar-nav ms-auto d-flex justify-content-end">
-                    <ul class="nav navbar-nav d-flex align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('shop') }}">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href={{ url('about') }}>About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href={{ url('registrasi') }}>Registrasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('login') }}">Login</a>
-                        </li>
-                    </ul>
-                </div>
-=======
         <div class="collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
             <div class="navbar-nav ms-auto d-flex justify-content-end">
                 <ul class="nav navbar-nav d-flex align-items-center">
@@ -66,7 +43,6 @@
                     </li>
                     @endguest
                 </ul>
->>>>>>> c89161c6f57522d8e4d5b3103cca81aa8fff64ff
             </div>
         </div>
     </div>
