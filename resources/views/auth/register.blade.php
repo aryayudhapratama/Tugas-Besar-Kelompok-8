@@ -15,8 +15,8 @@
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-6">
                     <div class="header">
-                        <h1>Register here teman temankuuu</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, odit!</p>
+                        <h1>Registrasi</h1>
+                        <p>Sunshine Shoescare adalah solusi untuk sepatu anda menjadi bersih!</p>
                     </div>
 
                     <div class="regis-form">
@@ -30,7 +30,16 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-
+                            
+                            {{-- <label for="role" class="col-md-0 col-form-label text-md-end">{{ __('Role') }}</label>
+                            <input id="role" type="text" class="form-control @error('role') is-invalid @enderror"
+                                name="role" value="{{ old('Role') }}" required autocomplete="role" autofocus>
+                            @error('role')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror --}}
+                
                             <label for="email" class="col-md-0 col-form-label text-md-end">{{ __('Email Address') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                    name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -63,13 +72,13 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb1.png') }}" alt="image">
+                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
                     </div>
                     <div class="carousel-item active">
-                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb2.png') }}" alt="image">
+                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-parfume.png') }}" alt="image">
                     </div>
                     <div class="carousel-item h-100">
-                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb3.png') }}" alt="image">
+                        <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

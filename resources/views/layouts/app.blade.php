@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ $pageTitle }}</title>
+    <title>{{ $pageTitle ?? "Default Page Title" }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite(['resources/sass/app.scss', 'resources/css/bootsrap.min.css', 'resources/css/style.css', 'resources/css/custom.css'])

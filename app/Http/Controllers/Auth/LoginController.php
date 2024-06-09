@@ -3,37 +3,55 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+            // Retrieve the authenticated user
+            $user = Auth::user();
+
+            // Check the role of the user and redirect accordingly
+            if ($user->role === 'admin') {
+                return redirect()->intended('admin');
+            } elseif ($user->role === 'user') {
+                return redirect()->intended('/');
+            }
+
+            // Add more conditions for other roles if needed
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
+    public function showLoginForm()
+    {
+        $pageTitle = "Login";
+        return view('auth.login', compact('pageTitle'));
+    }
+    
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    /**
-     * Show the application's login form.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showLoginForm()
-    {
-        return view('auth.login');
     }
 }
