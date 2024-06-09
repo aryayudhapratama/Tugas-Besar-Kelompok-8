@@ -4,14 +4,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\LogoutController;
-
 
 // Route Admin
 Route::get('/admin', function () {
@@ -22,9 +23,7 @@ Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/user', [UserController::class, 'index']);
 
-Route::get('transaction', function () {
-    return view('admin.transaction');
-});
+Route::get('/transaction', [TransactionController::class, 'index']);
 
 // Rute resource untuk produk
 Route::resource('products', ProductController::class);
@@ -36,10 +35,6 @@ Route::resource('users', UserController::class);
 Route::resource('transactions', TransactionController::class);
 
 // end admin
-
-//Login Regis
-
-
 
 //tampilan fitur
 Route::get('/', [HomeController::class, 'index']);

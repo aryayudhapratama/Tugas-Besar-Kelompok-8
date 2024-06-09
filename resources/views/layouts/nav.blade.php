@@ -46,6 +46,3 @@
     </div>
 </nav>
 <!-- Close Header -->
-
-
-<!-- Close Login Modal -->
