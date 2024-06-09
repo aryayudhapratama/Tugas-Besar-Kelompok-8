@@ -11,6 +11,7 @@
 
 
 .teks1 {
+    background-color: orange;
     text-align: center;
     color: black;
 }
@@ -26,8 +27,6 @@
     font-weight: 400; /* Ketebalan font */
 }
 
-.home-testimonial{background-color: orange;height: 380px}.home-testimonial-bottom{background-color: #f8f8f8;transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top: 20px;margin-bottom: 0px;position: relative;height: 130px;top: 190px}.home-testimonial h3{color: var(--orange);font-size: 14px;font-weight: 500;text-transform: uppercase}.home-testimonial h2{color: white;font-size: 28px;font-weight: 700}.testimonial-inner{position: relative;top: -174px}.testimonial-pos{position: relative;top: 24px}.testimonial-inner .tour-desc{border-radius: 5px;padding: 40px}.color-grey-3{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}.testimonial-inner img.tm-people{width: 60px;height: 60px;-webkit-border-radius: 50%;border-radius: 50%;-o-object-fit: cover;object-fit: cover;max-width: none}.link-name{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}.link-position{font-family: "Montserrat", Sans-serif;font-size: 12px;color: #6c83a2}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -42,15 +41,16 @@ body {
   }
 
   .column {
-    float: left;
-    width: 20%;
+    display: center;
+    float: center;
+    width: 25%;
     margin-bottom: 10px;
     padding: 0 10px;
   }
 
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 4px;
+    margin: 10px;
   }
 
   .about-section {
@@ -71,7 +71,7 @@ body {
   }
 
   .title {
-    color: grey;
+    color: rgb(61, 61, 61);
   }
 
   .button {
@@ -87,7 +87,7 @@ body {
   }
 
   .button:hover {
-    background-color: #555;
+    background-color: #303030;
   }
 
   @media screen and (max-width: 650px) {

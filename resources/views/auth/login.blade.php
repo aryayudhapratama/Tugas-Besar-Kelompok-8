@@ -15,10 +15,13 @@
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-6">
                     <div class="header">
-                        <h1>Welcome to our website</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, odit!</p>
+                        <h1>Welcome to our website.</h1>
+                        <p>Sunshine Shoescare adalah solusi untuk sepatu anda menjadi bersih!</p>
                     </div>
 
+                    <form class="row g-3 needs-validation" method="POST" action="{{ route('login') }}"
+                                        novalidate>
+                                        @csrf
                     <div class="login-form">
                         <label for="email" class="col-md-0 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
@@ -48,26 +51,26 @@
                         </button>
 
                         <div class="text-center">
-                            <span class="d-inline">Dont have an account? <a href="{{ url('registrasi') }}" class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
+                            <span class="d-inline">Dont have an account? <a href="{{ url('register') }}" class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
                             </span>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
-
         </div>
 
         <div class="login-right w-50 h-100">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb1.png') }}" alt="image">
+                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
                   </div>
                   <div class="carousel-item active">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb2.png') }}" alt="image">
+                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-parfume.png') }}" alt="image">
                   </div>
                   <div class="carousel-item h-100">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/gb3.png') }}" alt="image">
+                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
