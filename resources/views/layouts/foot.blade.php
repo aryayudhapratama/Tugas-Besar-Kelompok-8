@@ -1,65 +1,72 @@
     <!-- Start Footer -->
-    <footer class="bg-dark mb-0" id="tempaltemo_footer">
-        <div class="container mb-0">
-            <div class="row">
+    <footer style="background-color: #f0f0f0">
+          <!-- Section: Social media -->
+<br>
+          <!-- Section: Social media -->
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Sunshine Shoes Care</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Telkom University Surabaya
-                        </li>
-                        <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">666-666-6666</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="sunshineshoescare@gmail.com">sunshineshoescare@gmail.com</a>
-                        </li>
-                    </ul>
+          <!-- Section: Links  -->
+            <div class="container text-center text-md-start mt-1">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <img src="{{ Vite::asset('/resources/images/Logo-sn.png') }}" class="d-block" style="width: 230px; height: auto;">
+                  <p>
+                    Sunshine Shoe Care adalah perusahaan yang menawarkan produksi
+                    pembersih sepatu. Produk pembersih sepatu yang kami produk telah teruji laboratorium, sehingga menjaga sepatu anda tetap bersih
+                    dan wangi.
+                  </p>
                 </div>
+                <!-- Grid column -->
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Tubes P. Framework</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum numquam perspiciatis ipsam vero delectus modi voluptatibus voluptate. Molestiae, suscipit consequuntur.</p></li>
-                    </ul>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <br>
+                  <h6 class="text-uppercase fw-bold">Consumer Complaints Service Contact Information</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    Directorate General of Consumer Protection and Trade Compliance, Ministry of Trade of the Republic of Indonesia
+                  </p>
                 </div>
+                <!-- Grid column -->
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Anggota Kelompok</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>Arya Yudha Pratama| 1204220083</li>
-                        <li>Sandi Adimas | 1204222135</li>
-                        <li>Ferdian Bimo | 1204220038</li>
-                        <li>Rafi Syeghani | 1204220047</li>
-                    </ul>
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links --> <br>
+                  <h6 class="text-uppercase fw-bold">
+                    Customer Center</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p><i class="fas fa-home mr-3"></i> Jl. Ketintang, Ketintang, Kec. Gayungan, Surabaya, Jawa Timur. </p>
+                  <p><i class="fas fa-envelope mr-3"></i> Sunshineshoescare@gmail.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                 </div>
-
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
             </div>
+          </section>
+          <!-- Section: Links  -->
 
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/sunshineshoescare?igsh=OG1sOWRwODdjNm1w"><i class="bi bi-instagram"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.tiktok.com/@sunshineshoescare?_t=8mtQ7L3QfOJ&_r=1"><i class="bi bi-tiktok"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="bi bi-whatsapp"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="w-100 bg-black py-3">
-        </div>
-    </footer>
+          <!-- Copyright -->
+          <div
+               class="text-center p-1"
+               style="background-color:#ff6f00"
+               >
+            © 2024 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/"
+               >Sunshineshoescare.com</a
+              >
+          </div>
     <!-- End Footer -->
