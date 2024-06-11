@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    @include('layouts.nav')
-    @yield('content')
-    @include('layouts.foot')
+    @include('user.layoutsUser.nav')
+    @yield('user.layoutsUser.content')
+    @include('user.layoutsUser.foot')
     @vite(['resources/js/app.js'])
 </body>
 
