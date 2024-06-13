@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('user.layoutsUser.app')
+@section('user.layoutsUser.content')
 <div class="banner">
     <img src="{{ Vite::asset('/resources/images/image-14.png') }}" alt="banner">
     <div class="banner-content">

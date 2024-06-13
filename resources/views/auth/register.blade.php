@@ -30,7 +30,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-
+                            
                             {{-- <label for="role" class="col-md-0 col-form-label text-md-end">{{ __('Role') }}</label>
                             <input id="role" type="text" class="form-control @error('role') is-invalid @enderror"
                                 name="role" value="{{ old('Role') }}" required autocomplete="role" autofocus>
@@ -39,7 +39,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror --}}
-
+                
                             <label for="email" class="col-md-0 col-form-label text-md-end">{{ __('Email Address') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                    name="email" value="{{ old('email') }}" required autocomplete="email">

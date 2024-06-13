@@ -20,9 +20,9 @@ class LoginController extends Controller
 
             // Check the role of the user and redirect accordingly
             if ($user->role === 'admin') {
-                return redirect()->intended('admin');
+                return view('admin.index');
             } elseif ($user->role === 'user') {
-                return redirect()->intended('/');
+                return view('home');
             }
 
             // Add more conditions for other roles if needed
@@ -35,8 +35,10 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login');
+        $pageTitle = "Login";
+        return view('auth.login', compact('pageTitle'));
     }
+
 
     public function logout(Request $request)
     {

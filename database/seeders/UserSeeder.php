@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
         // Menyisipkan data pengguna dengan peran admin
         User::create([
@@ -29,14 +30,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Menyisipkan data pengguna dengan peran user
-        User::create([
-            'name' => 'Rafi',
-            'email' => 'user@user',
+        User::factory()->count(10)->create([
             'role' => 'user',
-            'email_verified_at' => now(),
             'password' => Hash::make('12345678'), // Ganti dengan kata sandi user yang diinginkan
-            'created_at' => now(),
-            'updated_at' => now(),
         ]);
     }
 }

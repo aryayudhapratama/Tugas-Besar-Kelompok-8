@@ -1,6 +1,6 @@
-    @extends('layouts.app')
+    @extends('user.layoutsUser.app')
 
-    @section('content')
+    @section('user.layoutsUser.content')
         <!-- Start Content -->
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -15,7 +15,7 @@
                                         <div
                                             class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
-                                                <li><a class="btn btn-outline-light view-details" href="{{ route('details', $product->id) }}">View Details<i
+                                                <li><a class="btn btn-outline-light view-details" href="{{ route('detailsUser', $product->id) }}">View Details<i
                                                     class="far fa-heart"></i></a></li>
                                             </ul>
                                         </div>

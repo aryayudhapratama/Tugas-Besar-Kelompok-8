@@ -28,6 +28,7 @@
                                 <a href="{{ route('users.create') }}" class="btn text-white"
                                     style="background-color:#f4623a">Create New Data</a>
                             </div>
+
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
@@ -35,7 +36,7 @@
                                             <th>No</th>
                                             <th>User Name</th>
                                             <th>Email</th>
-                                            <th>Password</th>
+                                            <th>Role</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -45,7 +46,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>{{ $user->password }}</td>
+                                                <td>{{ $user->role }}</td>
                                                 <td>@include('admin.actionUser')</td>
                                             </tr>
                                         @endforeach

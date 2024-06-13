@@ -9,6 +9,7 @@
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
             <div class="navbar-nav ms-auto d-flex justify-content-end">
                 <ul class="nav navbar-nav d-flex align-items-center">
@@ -16,36 +17,23 @@
                         <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/shop') }}">Shop</a>
+                        <a class="nav-link" href="{{ url('/shopUser') }}">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('/about') }}>About</a>
+                        <a class="nav-link" href="{{ url('/aboutUser') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <a class="nav-link" href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           Logout
-                        </a>
+                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
                     </li>
                     {{-- @guest
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('/register') }}>Registrasi</a>
+                        <a class="nav-link" href="{{ url('/register') }}">Registrasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('/login') }} data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <a class="nav-link" href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           Logout
-                        </a>
+                        <a class="nav-link" href="{{ url('/home') }}">Login</a>
                     </li>
                     @endguest --}}
                 </ul>

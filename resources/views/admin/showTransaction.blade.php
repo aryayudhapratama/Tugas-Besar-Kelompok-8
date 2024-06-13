@@ -18,14 +18,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
-                            <img src="{{ asset('storage/product-picture/'.$product->picture) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->description }}</p>
-                            </div>
+                            <img src="{{ asset('storage/transaction-picture/'.$transaction->picture) }}" class="card-img-top" alt="...">
                         </div>
                         <div class="col-md-6 d-grid">
-                            <a href="{{ route('products.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i
+                            <a href="{{ route('transactions.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i
                                     class="bi-arrow-left-circle me-2"></i> Cancel</a>
                         </div>
                     </div>
@@ -33,18 +29,25 @@
                         <div class="card">
                             <div class="card-header">Detail</div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5><br>
                                 <div class="col-md-12 mb-3">
-                                    <label for="id" class="form-label">ID</label>
-                                    <h5>{{ $product->id }}</h5>
+                                    <label for="product_id" class="form-label">Product Name</label>
+                                    <h5>{{ optional($transaction->product)->name }}</h5>
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <label for="price" class="form-label">Price</label>
-                                    <h5>{{ $product->price }}</h5>
+                                    <label for="user_id" class="form-label">User Name</label>
+                                    <h5>{{ optional($transaction->user)->name }}</h5>
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <label for="stock" class="form-label">Stock</label>
-                                    <h5>{{ $product->stock }}</h5>
+                                    <label for="transaction_date" class="form-label">Transaction Date</label>
+                                    <h5>{{ $transaction->transaction_date }}</h5>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="quantity" class="form-label">Quantity</label>
+                                    <h5>{{ $transaction->quantity }}</h5>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <h5>{{ $transaction->address }}</h5>
                                 </div>
                             </div>
                         </div>

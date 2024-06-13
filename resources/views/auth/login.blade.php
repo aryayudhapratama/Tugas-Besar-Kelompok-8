@@ -19,42 +19,46 @@
                         <p>Sunshine Shoescare adalah solusi untuk sepatu anda menjadi bersih!</p>
                     </div>
 
-                    <form class="row g-3 needs-validation" method="POST" action="{{ route('login') }}"
-                                        novalidate>
-                                        @csrf
-                    <div class="login-form">
-                        <label for="email" class="col-md-0 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                    <form class="row g-3 needs-validation" method="POST" action="{{ route('login') }}" novalidate>
+                        @csrf
+                        <div class="login-form">
+                            <label for="email"
+                                class="col-md-0 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                            placeholder="name@blablabla.com">
+                            <input id="email" type="email"
+                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" autofocus
+                                placeholder="name@blablabla.com">
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
 
-                        <label for="password" class="col-md-0 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password"
+                                class="col-md-0 col-form-label text-md-end">{{ __('Password') }}</label>
 
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="current-password" placeholder="ENTER YOUR PASSWORD">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password" placeholder="ENTER YOUR PASSWORD">
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
 
-                        <button type="submit" class="signin mt-4">
-                            {{ __('Login') }}
-                        </button>
+                            <button type="submit" class="signin mt-4">
+                                {{ __('Login') }}
+                            </button>
 
-                        <div class="text-center">
-                            <span class="d-inline">Dont have an account? <a href="{{ url('register') }}" class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
-                            </span>
+                            <div class="text-center">
+                                <span class="d-inline">Dont have an account? <a href="{{ url('register') }}"
+                                        class="signup d-inline text-decoration-none">{{ __('Register here') }}</a>
+                                </span>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -63,25 +67,30 @@
         <div class="login-right w-50 h-100">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
-                  </div>
-                  <div class="carousel-item active">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-parfume.png') }}" alt="image">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img class="img-thumbnail d-block w-100" src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
-                  </div>
+                    <div class="carousel-item active">
+                        <img class="img-thumbnail d-block w-100"
+                            src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
+                    </div>
+                    <div class="carousel-item active">
+                        <img class="img-thumbnail d-block w-100"
+                            src="{{ Vite::asset('resources/images/shoe-parfume.png') }}" alt="image">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img class="img-thumbnail d-block w-100"
+                            src="{{ Vite::asset('resources/images/shoe-cleaner.png') }}" alt="image">
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
-              </div>
+            </div>
         </div>
     </section>
 </body>

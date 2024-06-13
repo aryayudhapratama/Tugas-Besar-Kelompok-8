@@ -28,8 +28,8 @@
                         <h5>{{ $user->email }}</h5>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <h5>{{ $user->password }}</h5>
+                        <label for="role" class="form-label">Role</label>
+                        <h5>{{ $user->role }}</h5>
                     </div>
                 </div>
                 <hr>
