@@ -35,7 +35,7 @@
                                             <th>No</th>
                                             <th>User Name</th>
                                             <th>Email</th>
-                                            <th>Password</th>
+                                            <th>Role</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -45,7 +45,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>{{ $user->password }}</td>
+                                                <td>{{ $user->role }}</td>
                                                 <td>@include('admin.actionUser')</td>
                                             </tr>
                                         @endforeach
