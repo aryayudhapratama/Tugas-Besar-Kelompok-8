@@ -21,15 +21,14 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/aboutUser') }}">About</a>
-                    </li>
-                    @guest
+                    </li>                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/register') }}">Registrasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/home') }}">Login</a>
                     </li>
-                    @endguest
+                    
                 </ul>
             </div>
         </div>

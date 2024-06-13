@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href={{ url('/about') }}>About</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/order') }}">Pesanan</a>
+                    </li>
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href={{ url('/register') }}>Registrasi</a>

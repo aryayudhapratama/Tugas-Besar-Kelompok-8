@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\DisplayController;
@@ -12,9 +13,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DisplayShopController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Http\Controllers\OrderController;
 // user
-Route::get('/', function () {
+Route::get('/homeUser', function () {
     return view('user.homeUser');
 });
 
@@ -69,3 +70,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/order', [OrderController::class, 'index'])->name('order');
