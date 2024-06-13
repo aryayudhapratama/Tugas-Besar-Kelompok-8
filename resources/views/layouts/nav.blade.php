@@ -22,32 +22,17 @@
                         <a class="nav-link" href={{ url('/about') }}>About</a>
                     </li>
                     <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <a class="nav-link" href="{{ route('orders', Auth::id()) }}">Order</a>
+                    </li>
+                    <li class="nav-item p-1 btn btn-outline-warning rounded-pill fw-normal">
+                        <form id="logout-form" action= "{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                        <a class="nav-link" href="{{ route('logout') }}"
+                        <a class="nav-link p-1 btn btn-outline-warning rounded-pill fw-normal text-black" href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                            Logout
                         </a>
                     </li>
-                    {{-- @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href={{ url('/register') }}>Registrasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={{ url('/login') }} data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <a class="nav-link" href="{{ route('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           Logout
-                        </a>
-                    </li>
-                    @endguest --}}
                 </ul>
             </div>
         </div>

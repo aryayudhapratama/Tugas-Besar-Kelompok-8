@@ -22,20 +22,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/aboutUser') }}">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    <li class="nav-item p-1">
+                        <a class="btn btn-outline-warning rounded-pill fw-normal text-black" href="{{ url('/login') }}">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                    <li class="nav-item p-1">
+                        <a class="btn btn-outline-warning rounded-pill fw-normal text-black" href="{{ url('/register') }}">Register</a>
                     </li>
-                    {{-- @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/register') }}">Registrasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/home') }}">Login</a>
-                    </li>
-                    @endguest --}}
                 </ul>
             </div>
         </div>

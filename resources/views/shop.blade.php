@@ -8,10 +8,10 @@
                     <div class="row">
                         @foreach ($products as $product)
                             <div class="col-md-4 mx-auto">
-                                <div class="card mb-4 product-wap rounded-0">
-                                    <div class="card rounded-0">
+                                <div class="card mb-4 product-wap">
+                                    <div class="card rounded-5 shadow">
                                         <img src="{{ asset('storage/product-picture/' . $product->picture) }}" alt=""
-                                            class="d-block w-100 card-img rounded-0 img-fluid">
+                                            class="d-block w-100 card-img rounded-2 img-fluid">
                                         <div
                                             class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
