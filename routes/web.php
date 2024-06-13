@@ -14,6 +14,7 @@ use App\Http\Controllers\DisplayShopController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CheckoutController;
 use App\Models\Transaction;
 
 // user
@@ -62,6 +63,7 @@ Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/detail/{id}', [ShopController::class, 'show'])->name('details');
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
 //login
 Route::post('login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
@@ -70,4 +72,17 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/order', [OrderController::class, 'index'])->name('order');
+// Route::get('/order', [OrderController::class, 'index'])->name('order');
+
+Route::get('/checkout/{product_id}/{user_id}', [CheckoutController::class, 'create'])->name('checkout');
+Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
+
+// Arahkan checkout jika di confirm ke halaman shop
+Route::post('checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
+
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
+//order history
+Route::get('/orders/{id}', [OrderController::class, 'index'])->name('orders');
+Route::get('/orders/{id}/export-pdf', [OrderController::class, 'exportPdf'])->name('orders.exportPdf');
+

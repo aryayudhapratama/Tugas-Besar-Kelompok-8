@@ -42,10 +42,6 @@
                                     <label for="stock" class="form-label">Stock:</label>
                                     <h5>{{ $product->stock }}</h5>
                                 </div>
-                                {{-- <div class="col-md-12 mb-3">
-                                    <label for="satuan_id" class="form-label">ID Satuan</label>
-                                    <h5>{{ $barang->satuans->nama_satuan }}</h5>
-                                </div> --}}
                             </div>
                         </div>
                         <ul class="w-100 list-unstyled d-flex  mb-0">
@@ -54,7 +50,8 @@
                                     class="bi-arrow-left-circle me-2"></i> Cancel</a>
                             </li>
                             <li>
-                                <a href="{{ url('shop') }}" class="btn btn-outline-success btn-lg mt-3"><i
+                                 <!-- Update the href attribute to include the product ID and user ID -->
+                                 <a href="{{ route('checkout', ['product_id' => $product->id, 'user_id' => auth()->user()->id]) }}" class="btn btn-outline-success btn-lg mt-3"><i
                                     class="bi-arrow-right-circle me-2"></i> Checkout</a>
                             </li>
                         </ul>
