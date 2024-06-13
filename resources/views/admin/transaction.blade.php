@@ -50,7 +50,8 @@
                                                 <td>{{ $transaction->quantity }}</td>
                                                 <td>{{ $transaction->address }}</td>
                                                 <td>
-                                                    <img src="{{ asset('storage/transaction-picture/' . $transaction->picture) }}"alt="" width="100">
+                                                    <img src="{{ asset('storage/transaction-picture/' . $transaction->picture) }}"alt=""
+                                                        width="100">
                                                 </td>
                                                 <td>{{ $transaction->status }}</td>
                                                 <td>@include('admin.actionTransaction')</td>

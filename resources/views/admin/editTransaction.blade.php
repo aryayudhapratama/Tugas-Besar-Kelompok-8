@@ -72,7 +72,7 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
-                        <div class="col-md-6 mb-3">
+                        {{-- <div class="col-md-6 mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
                             <input class="form-control @error('quantity') is-invalid @enderror" type="text"
                                 name="quantity" id="quantity"
@@ -81,7 +81,7 @@
                             @error('quantity')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 mb-3">
                             <label for="address" class="form-label">Address</label>
                             <input class="form-control @error('address') is-invalid @enderror" type="text"

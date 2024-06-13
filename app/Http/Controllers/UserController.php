@@ -58,6 +58,7 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = $request->password;
+            $user->role = 'user';
             $user->save();
 
             return redirect()->route('users.index');
@@ -101,8 +102,8 @@ class UserController extends Controller
         ];
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            // 'email' => 'required',
+            'role' => 'required',
         ], $messages);
 
         if ($validator->fails()) {
@@ -110,10 +111,10 @@ class UserController extends Controller
         }
 
             // ELOQUENT
-            $user = New User;
+            $user = User::find($id);
             $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = $request->password;
+            // $user->email = $request->email;
+            $user->role = $request->role;
             $user->save();
 
             return redirect()->route('users.index');

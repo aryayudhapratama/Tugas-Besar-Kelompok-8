@@ -32,7 +32,7 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
-                        <div class="col-md-6 mb-3">
+                        {{-- <div class="col-md-6 mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input class="form-control @error('email') is-invalid @enderror" type="text"
                                 name="email" id="email"
@@ -41,14 +41,14 @@
                             @error('email')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 mb-3">
-                            <label for="password" class="form-label">password</label>
-                            <input class="form-control @error('password') is-invalid @enderror" type="text"
-                                name="password" id="password"
-                                value="{{ $errors->any() ? old('password') : $user->password }}"
-                                placeholder="Enter Password">
-                            @error('password')
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-control @error('role') is-invalid @enderror" name="role" id="role">
+                                <option value="user" {{ (old('role') ?? $user->role) == 'user' ? 'selected' : '' }}>user</option>
+                                <option value="admin" {{ (old('role') ?? $user->role) == 'admin' ? 'selected' : '' }}>admin</option>
+                            </select>
+                            @error('role')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>

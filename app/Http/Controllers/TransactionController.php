@@ -18,9 +18,11 @@ class TransactionController extends Controller
      */
     public function index()
     {
+        $pageTitle = 'Transaction List';
+
         $transactions = Transaction::all();
 
-        return view('admin.transaction', compact('transactions'));
+        return view('admin.transaction', compact('transactions', 'pageTitle'));
     }
 
     /**
@@ -83,6 +85,11 @@ class TransactionController extends Controller
         $transaction->status = 'Process';
         $transaction->save();
 
+        // Kurangi stok produk yang terkait dengan jumlah transaksi
+        $product = Product::find($request->product_id);
+        $product->stock -= $request->quantity;
+        $product->save();
+
         return redirect()->route('transactions.index');
     }
 
@@ -139,7 +146,7 @@ class TransactionController extends Controller
             'product_id' => 'required|numeric',
             'user_id' => 'required|numeric',
             'transaction_date' => 'required|date',
-            'quantity' => 'required|numeric',
+            // 'quantity' => 'required|numeric',
             'address' => 'required|string|max:255',
             // 'picture' => 'nullable|mimes:png,jpg,jpeg|max:2048',
             'status' => 'required',
@@ -150,27 +157,18 @@ class TransactionController extends Controller
         }
 
         $transaction = Transaction::find($id);
-
-        // Periksa apakah file gambar diunggah
-        // if ($request->hasFile('picture')) {
-        //     $picture = $request->file('picture');
-        //     $filename = date('Y-m-d') . '-' . $picture->getClientOriginalName();
-        //     $path = 'transaction-picture/' . $filename;
-
-        //     Storage::disk('public')->put($path, file_get_contents($picture));
-
-        //     // Jika gambar berhasil diunggah, perbarui field gambar di database
-        //     $transaction->picture = $path;
-        // }
-
-        // Perbarui field lainnya
         $transaction->product_id = $request->product_id;
         $transaction->user_id = $request->user_id;
         $transaction->transaction_date = $request->transaction_date;
-        $transaction->quantity = $request->quantity;
+        // $transaction->quantity = $request->quantity;
         $transaction->address = $request->address;
         $transaction->status = $request->status;
         $transaction->save();
+
+        // Hitung selisih jumlah transaksi baru dengan jumlah transaksi lama
+        $product = Product::find($request->product_id);
+        $product->stock -= $request->quantity;
+        $product->save();
 
         return redirect()->route('transactions.index');
     }
