@@ -14,6 +14,8 @@ use App\Http\Controllers\DisplayShopController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\OrderController;
+use App\Models\Transaction;
+
 // user
 Route::get('/homeUser', function () {
     return view('user.homeUser');
@@ -40,9 +42,7 @@ Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/user', [UserController::class, 'index']);
 
-Route::get('transaction', function () {
-    return view('admin.transaction');
-});
+Route::get('/transaction', [TransactionController::class, 'index']);
 
 // Rute resource untuk produk
 Route::resource('products', ProductController::class);
@@ -56,9 +56,6 @@ Route::resource('transactions', TransactionController::class);
 // end admin
 
 //Login Regis
-
-
-
 //tampilan fitur
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);

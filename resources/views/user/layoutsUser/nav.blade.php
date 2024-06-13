@@ -14,21 +14,28 @@
             <div class="navbar-nav ms-auto d-flex justify-content-end">
                 <ul class="nav navbar-nav d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/homeUser') }}">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/shopUser') }}">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/aboutUser') }}">About</a>
-                    </li>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                    </li>
+                    {{-- @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/register') }}">Registrasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/home') }}">Login</a>
                     </li>
-                    
+                    @endguest --}}
                 </ul>
             </div>
         </div>
