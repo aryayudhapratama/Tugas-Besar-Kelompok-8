@@ -47,7 +47,7 @@
                         </div>
                         <ul class="w-100 list-unstyled d-flex mb-0">
                             <li class="me-3">
-                                <a href="{{ url('shop') }}" class="btn btn-outline-danger btn-lg mt-3">
+                                <a href="{{ url('shopUser') }}" class="btn btn-outline-danger btn-lg mt-3">
                                     <i class="bi-arrow-left-circle me-2"></i> Cancel
                                 </a>
                             </li>

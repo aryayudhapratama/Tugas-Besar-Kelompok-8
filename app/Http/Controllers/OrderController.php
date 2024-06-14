@@ -10,6 +10,10 @@ use PDF; // Import PDF from Dompdf library
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index($id)
     {
         $user = User::findOrFail($id);

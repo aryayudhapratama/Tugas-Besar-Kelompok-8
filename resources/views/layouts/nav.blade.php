@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <a class="navbar-brand text-success logo align-self-center" href="home">
+        <a class="navbar-brand text-success logo align-self-center">
             <img src="{{ Vite::asset('/resources/images/Logo-sn.png') }}" class="d-block" style="width: 230px; height: auto;">
         </a>
 
@@ -13,7 +13,7 @@
             <div class="navbar-nav ms-auto d-flex justify-content-end">
                 <ul class="nav navbar-nav d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" href="{{ url('/home') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/shop') }}">Shop</a>
@@ -24,7 +24,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('orders', Auth::id()) }}">Order</a>
                     </li>
-                    <li class="nav-item p-1 btn btn-outline-warning rounded-pill fw-normal">
+                    <li class="nav-item p-2 btn btn-outline-warning rounded-pill fw-normal">
                         <form id="logout-form" action= "{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

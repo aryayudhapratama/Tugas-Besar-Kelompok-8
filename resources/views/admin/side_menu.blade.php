@@ -1,33 +1,28 @@
 <!-- Left Panel -->
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
-
-        <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
-                aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-        </div>
-
+        <h3 class="menu-title">Admin</h3>
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="{{ url('admin') }}">Dashboard </a>
                 </li>
                 <li class="active">
-                    <a href="{{ url('product') }}"> <i class="menu-icon fa fa-dashboard"></i>Product </a>
+                    <a href="{{ url('product') }}">Product </a>
                 </li>
                 <li class="active">
-                    <a href="transaction"> <i class="menu-icon fa fa-dashboard"></i>Transaction </a>
+                    <a href="transaction">Transaction </a>
                 </li>
                 <li class="active">
-                    <a href="{{ url('user') }}"> <i class="menu-icon fa fa-dashboard"></i>User </a>
+                    <a href="{{ url('user') }}">User </a>
                 </li>
-                {{-- <h3 class="menu-title">UI elements</h3><!-- /.menu-title --> --}}
-
+                <li class="active">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="nav-link" href="{{ url('/') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout </a>
+                </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
     </nav>
-</aside><!-- /#left-panel -->
+</aside>

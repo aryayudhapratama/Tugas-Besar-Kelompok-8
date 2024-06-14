@@ -21,7 +21,7 @@
   <div class="row">
     <div class="column">
       <div class="card" style="text-align:center">
-        <img src="{{ Vite::asset('/resources/images/bimo.png') }}" alt="" style="width:100%">
+        <img src="{{ Vite::asset('/resources/images/yd.jpg') }}" alt="" style="width:100%">
         <br>
         <div class="container">
           <h3>Arya Yudha</h3>
@@ -32,10 +32,10 @@
 
     <div class="column">
         <div class="card" style="text-align:center">
-        <img src="{{ Vite::asset('/resources/images/bimo.png') }}" alt="" style="width:100%">
+        <img src="{{ Vite::asset('/resources/images/rf.jpg') }}" alt="" style="width:100%">
         <br>
         <div class="container">
-          <h2>Rafi Syehgani</h2>
+          <h2>Rafi Syeghani</h2>
           <p class="title">Art Director</p>
         </div>
       </div>
@@ -43,7 +43,7 @@
 
       <div class="column">
         <div class="card" style="text-align:center">
-          <img src="{{ Vite::asset('/resources/images/bimo.png') }}" alt="" style="width:100%">
+          <img src="{{ Vite::asset('/resources/images/bm.jpg') }}" alt="" style="width:100%">
           <br>
           <div class="container">
             <h2>Ferdian Bimo</h2>
@@ -54,7 +54,7 @@
 
     <div class="column">
         <div class="card" style="text-align:center">
-        <img src="{{ Vite::asset('/resources/images/bimo.png') }}" alt="" style="width:100%">
+        <img src="{{ Vite::asset('/resources/images/dm.jpg') }}" alt="" style="width:100%">
         <br>
         <div class="container">
           <h2>Sandi Adimas</h2>

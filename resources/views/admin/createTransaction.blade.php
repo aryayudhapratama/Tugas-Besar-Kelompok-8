@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <title>{{ $pageTitle }}</title> --}}
+    <title>{{ $pageTitle }}</title>
     @vite('resources/sass/app.scss')
 </head>
 
@@ -17,7 +17,7 @@
                 <div class="p-5 bg-light rounded-3 border col-xl-6">
                     <div class="mb-3 text-center">
                         <i class="bi bi-pencil-square fs-1"></i>
-                        <h4>Checkout</h4>
+                        <h4>Transaction</h4>
                     </div>
                     <hr>
                     <div class="row">

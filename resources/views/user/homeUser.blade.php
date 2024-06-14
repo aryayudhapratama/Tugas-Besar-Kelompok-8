@@ -8,7 +8,7 @@
         <p>Kami menawarkan produk dari merek Shunsine Shoes Care terpercaya dengan harga terjangkau dan kemudahan berbelanja. Dapatkan produk Anda dengan cepat dan aman ke seluruh Indonesia.</p>
         <div class="button-container mt-0 ">
             <!-- Tombol "Shop NOW" -->
-            <a href="{{ url('shop') }}" class="btn btn-outline-light">Shop Now <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ url('shopUser') }}" class="btn btn-outline-light">Shop Now <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
 </div>
