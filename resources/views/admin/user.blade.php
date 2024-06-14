@@ -28,6 +28,7 @@
                                 <a href="{{ route('users.create') }}" class="btn text-white"
                                     style="background-color:#f4623a">Create New Data</a>
                             </div>
+
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>

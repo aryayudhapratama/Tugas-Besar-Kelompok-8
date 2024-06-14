@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
         // Menyisipkan data pengguna dengan peran admin
         User::create([
