@@ -26,7 +26,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="transaction_date" class="form-label">Transaction Date</label>
                             <input class="form-control @error('transaction_date') is-invalid @enderror" type="date"
-                                name="transaction_date" id="transaction_date" value="{{ old('transaction_date') }}">
+                                name="transaction_date" id="transaction_date" value="{{ old('transaction_date', date('Y-m-d')) }}">
                             @error('transaction_date')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
@@ -48,7 +48,7 @@
                             @enderror
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="picture" class="form-label">Picture</label>
+                            <label for="picture" class="form-label">Bukti Transfer</label>
                             <input class="form-control @error('picture') is-invalid @enderror" type="file" name="picture"
                                 id="picture" value="{{ old('picture') }}">
                             @error('picture')

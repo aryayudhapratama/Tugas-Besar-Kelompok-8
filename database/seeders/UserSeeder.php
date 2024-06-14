@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
     {
         // Menyisipkan data pengguna dengan peran admin
         User::create([
-            'name' => 'arya',
+            'name' => 'Admin',
             'email' => 'admin@admin',
             'role' => 'admin',
             'email_verified_at' => now(),

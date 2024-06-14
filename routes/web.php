@@ -37,7 +37,7 @@ Route::get('/aboutUser', [DisplayController::class, 'about']);
 // Route Admin
 Route::get('/admin', function () {
     return view('admin.index');
-});
+})->middleware('auth');
 
 Route::get('/product', [ProductController::class, 'index']);
 

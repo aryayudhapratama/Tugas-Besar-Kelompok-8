@@ -49,6 +49,10 @@
                                     <label for="address" class="form-label">Address</label>
                                     <h5>{{ $transaction->address }}</h5>
                                 </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="status" class="form-label">Status</label>
+                                    <h5>{{ $transaction->status }}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>

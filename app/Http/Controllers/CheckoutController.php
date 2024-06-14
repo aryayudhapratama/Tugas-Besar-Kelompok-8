@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Storage;
 
 class CheckoutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function create($product_id, $user_id)
     {
         $product = Product::find($product_id);
